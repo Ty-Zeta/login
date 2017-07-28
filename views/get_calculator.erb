@@ -1,0 +1,15 @@
+Please select a function
+
+<form method = "post" action = "/function">
+    <input type = "radio" name = "calc" value = 'plus' > Addition
+    <input type = "radio" name = "calc" value = 'minus' > Subtraction
+    <input type = "radio" name = "calc" value = 'times' > Multiplication
+    <input type = "radio" name = "calc" value = 'divided by' > Division
+    <input type = 'number' min = '1' max = '10000' name = 'num1'>
+	<input type = 'number' min = '1' max = '10000' name = 'num2'>
+    <input type = "hidden" name = "user_name" value = <%= name %> >
+    <input type = "hidden" name = "user_password" value = <%= password %> >
+    <input type = "hidden" name = "first_name" value = <%= fname %> >
+    <input type = "hidden" name = "last_name" value = <%= lname %> >
+    <input type = "submit" value = "Do the thing!"> 
+</form>
