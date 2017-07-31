@@ -2,7 +2,7 @@ require 'sinatra'
 require_relative "calculator.rb"
 
 cor_name = ["dog", "cat", "monkey"]
-cor_pass = [1234, 5678, 9012]
+cor_pass = ["1234", "5678", "9012"]
 
 get '/' do
     erb :get_username
