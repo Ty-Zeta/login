@@ -86,3 +86,15 @@ get '/get_results' do
     answer = params[:answer]
     erb :get_results, :locals => {:name => name, :password => password, :fname => fname, :lname => lname, :calc => calc, :num1 => num1, :num2 => num2, :answer => answer}
 end
+
+post '/redo' do
+    name = params[:user_name]
+    password = params[:user_password]
+    fname = params[:first_name]
+    lname = params[:last_name]
+    calc = params[:calc]
+    num1 = params[:num1]
+    num2 = params[:num2]
+    answer = params[:answer]
+    redirect '/function?user_name=' + name + '&user_password=' + password + '&first_name=' + fname + '&last_name=' + lname
+end

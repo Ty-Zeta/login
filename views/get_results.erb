@@ -1,8 +1,12 @@
 Okay <%= fname %> <%= lname %>, the answer to <%= num1 %> <%= calc %> <%= num2 %> is <%= answer %>. Would you like to play again?
 
-<form>
+<form method = "post" action = "/redo">
+    <input type = "radio" name = "again" value = 'blah' > Yes
+    <input type = "radio" name = "again" value = 'blah' > Definetly
+    <input type = "radio" name = "again" value = 'blah' > Absolutely
     <input type = "hidden" name = "user_name" value = <%= name %> >
     <input type = "hidden" name = "user_password" value = <%= password %> >
     <input type = "hidden" name = "first_name" value = <%= fname %> >
     <input type = "hidden" name = "last_name" value = <%= lname %> >
+    <input type = "submit" value = "Do it!"> 
 </form>
