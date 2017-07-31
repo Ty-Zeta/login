@@ -1,11 +1,14 @@
 require 'sinatra'
 require_relative "calculator.rb"
 
+cor_name = ["dog", "cat", "monkey"]
+cor_pass = [1234, 5678, 9012]
+
 get '/' do
     erb :get_username
 end
 
-post '/name' do
+post '/u_name' do
     name = params[:user_name]
     redirect '/password?user_name=' + name
 end
@@ -18,7 +21,23 @@ end
 post '/password' do
     name = params[:user_name]
     password = params[:user_password]
-    redirect '/names?user_name=' + name + '&user_password=' + password    
+    unless cor_name.include?(name) && cor_pass.include?(password)
+        redirect '/wrong_password?user_name=' + name + '&user_password' + password
+    else
+        redirect '/names?user_name=' + name + '&user_password=' + password
+    end   
+end
+
+get '/wrong_password' do
+    name = params[:user_name]
+    password = params[:user_password]
+    erb :wrong_password, :locals => {:name => name, :password => password}
+end
+
+post 'wrong_password' do
+    name = params[:user_name]
+    password = params[:user_password]
+    redirect '/u_name'
 end
 
 get '/names' do
